@@ -43,7 +43,7 @@ public class coin : MonoBehaviour
     IEnumerator RespawnCoins()
     {
         yield return new WaitForSeconds(3f);
-
+        this.gameObject.GetComponent<ParticleSystem>().Emit(2);
         this.transform.SetPositionAndRotation(new Vector3(UnityEngine.Random.Range(-3f,3f),2f,0f), this.transform.rotation);
         Debug.Log("Coin Spawn");
         coinObj.GetComponent<Renderer>().enabled = true;
